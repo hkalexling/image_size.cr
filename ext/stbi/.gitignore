@@ -1,0 +1,3 @@
+libstbi.a
+stb_image.h
+stbi.o
