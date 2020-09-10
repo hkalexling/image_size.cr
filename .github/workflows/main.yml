@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: crystallang/crystal:0.34.0-alpine
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: cd ext/libwebp && make && cd ../stbi && make && cd ../..
+    - name: Test
+      run: crystal spec
+    - name: Test static build
+      run: crystal build --static --release src/image_size.cr
