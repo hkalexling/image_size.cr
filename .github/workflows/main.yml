@@ -14,7 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Install dependencies
+    - name: Install system dependencies
+      run: apk add --no-cache libjpeg-turbo-dev libpng-dev tiff-dev
+    - name: Build shards libraries
       run: cd ext/libwebp && make && cd ../stbi && make && cd ../..
     - name: Test
       run: crystal spec
