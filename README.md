@@ -5,7 +5,7 @@ Get the image dimension (width and height) of various image types.
 Supported types:
 
 - through [`stb_image.h`](https://github.com/nothings/stb/blob/master/stb_image.h): JPG, PNG, TGA, BMP, PSD, GIF, HDR, PIC
-- through [`libwebp`](`https://github.com/webmproject/libwebp`): WebP
+- through [`libwebp`](https://github.com/webmproject/libwebp): WebP
 
 ## Installation
 
@@ -32,6 +32,7 @@ pp size.height
 # Using binary data
 file = File.new "test.png"
 bytes = Bytes.new file.size
+file.read bytes
 file.close
 size = ImageSize.get bytes
 pp size.width
