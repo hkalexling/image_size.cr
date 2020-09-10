@@ -1,5 +1,7 @@
 # image_size.cr
 
+![CI](https://github.com/hkalexling/image_size.cr/workflows/CI/badge.svg)
+
 Get the image dimension (width and height) of various image types.
 
 Supported types:
