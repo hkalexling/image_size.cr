@@ -78,7 +78,7 @@ struct ImageSize
             "must be non-zero"
     elsif width == 0
       width = (height / size.height * size.width).round.to_i
-    else
+    elsif height == 0
       height = (width / size.width * size.height).round.to_i
     end
 

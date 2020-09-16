@@ -13,19 +13,45 @@ describe ImageSize do
     size.height.should eq 368
   end
 
-  it "resizes JPEG file" do
+  it "resizes JPEG file by width" do
     bytes = ImageSize.resize "spec/test.jpg", width: 100
-    File.write "/tmp/test.jpg", bytes
-    size = ImageSize.get "/tmp/test.jpg"
+    size = ImageSize.get bytes
     size.width.should eq 100
     size.height.should eq 67
   end
 
-  it "resizes WebP file" do
+  it "resizes JPEG file by height" do
+    bytes = ImageSize.resize "spec/test.jpg", height: 100
+    size = ImageSize.get bytes
+    size.width.should eq 149
+    size.height.should eq 100
+  end
+
+  it "resizes JPEG file by both width and height" do
+    bytes = ImageSize.resize "spec/test.jpg", width: 100, height: 100
+    size = ImageSize.get bytes
+    size.width.should eq 100
+    size.height.should eq 100
+  end
+
+  it "resizes WebP file by width" do
     bytes = ImageSize.resize "spec/test.webp", width: 100
-    File.write "/tmp/test.webp", bytes
-    size = ImageSize.get "/tmp/test.webp"
+    size = ImageSize.get bytes
     size.width.should eq 100
     size.height.should eq 67
+  end
+
+  it "resizes WebP file by height" do
+    bytes = ImageSize.resize "spec/test.webp", height: 100
+    size = ImageSize.get bytes
+    size.width.should eq 149
+    size.height.should eq 100
+  end
+
+  it "resizes WebP file by both width and height" do
+    bytes = ImageSize.resize "spec/test.webp", width: 100, height: 100
+    size = ImageSize.get bytes
+    size.width.should eq 100
+    size.height.should eq 100
   end
 end
