@@ -9,4 +9,4 @@ crystal: 0.34.0
 license: MIT
 
 scripts:
-    postinstall: cd ext/libwebp && make && cd ../stbi && make
+    postinstall: make

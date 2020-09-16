@@ -17,7 +17,7 @@ jobs:
     - name: Install system dependencies
       run: apk add --no-cache libjpeg-turbo-dev libpng-dev tiff-dev
     - name: Build shards libraries
-      run: cd ext/libwebp && make && cd ../stbi && make && cd ../..
+      run: make
     - name: Test
       run: crystal spec
     - name: Test static build
