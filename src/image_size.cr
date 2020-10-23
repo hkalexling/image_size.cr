@@ -44,7 +44,12 @@ struct ImageSize
   private def self.stb_load(bytes : Bytes)
     ptr = LibStbi.stbi_load_from_memory bytes, bytes.size,
       out w, out h, out comp, 0
-    raise "stb_image.h failed to load image" if ptr.null?
+    if ptr.null?
+      msg = "stbi_image.h failed to load image"
+      msg_ptr = LibStbi.stbi_failure_reason
+      msg = String.new msg_ptr unless msg_ptr.null?
+      raise msg
+    end
     size = self.new w, h, comp
     data = Bytes.new ptr, size.width * size.height * size.components
     yield size, data
