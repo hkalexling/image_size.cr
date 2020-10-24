@@ -22,3 +22,12 @@ jobs:
       run: crystal spec
     - name: Test static build
       run: crystal build --static --release src/image_size.cr
+    - name: Generate docs
+      run: crystal docs
+    - name: Deploy docs
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: docs
+        CLEAN: true
