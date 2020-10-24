@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.33.0">
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="github.com/hkalexling/image_size.cr">
+  <title>ImageSize - github.com/hkalexling/image_size.cr</title>
+  <script type="text/javascript">
+    CrystalDoc.base_path = "";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" current" data-id="github.com/hkalexling/image_size.cr/ImageSize" data-name="imagesize">
+      <a href="ImageSize.html">ImageSize</a>
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">struct</span> ImageSize
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="ImageSize.html">ImageSize</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/hkalexling/image_size.cr/blob/a698fec0ca59c671ceebcd549c4fc6054fc78d2d/src/image_size.cr#L3" target="_blank">
+        image_size.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#get(bytes:Bytes):ImageSize-class-method" class="signature"><strong>.get</strong>(bytes : Bytes) : ImageSize</a>
+        
+          <div class="summary"><p>Gets image size from binary data.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get(filename:String):ImageSize-class-method" class="signature"><strong>.get</strong>(filename : String) : ImageSize</a>
+        
+          <div class="summary"><p>Gets image size from filename.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#resize(bytes:Bytes,*,width=0,height=0):Bytes-class-method" class="signature"><strong>.resize</strong>(bytes : Bytes, *, width = <span class="n">0</span>, height = <span class="n">0</span>) : Bytes</a>
+        
+          <div class="summary"><p>Resizes an image from binary data.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resize(filename:String,*,width=0,height=0):Bytes-class-method" class="signature"><strong>.resize</strong>(filename : String, *, width = <span class="n">0</span>, height = <span class="n">0</span>) : Bytes</a>
+        
+          <div class="summary"><p>Same as <code>self<a href="ImageSize.html#resize(bytes:Bytes,*,width=0,height=0):Bytes-class-method">.resize</a></code> but reads the image from a filename.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#height:Int32-instance-method" class="signature"><strong>#height</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#width:Int32-instance-method" class="signature"><strong>#width</strong> : Int32</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="get(bytes:Bytes):ImageSize-class-method">
+      <div class="signature">
+        
+        def self.<strong>get</strong>(bytes : Bytes) : <a href="ImageSize.html">ImageSize</a>
+
+        <a class="method-permalink" href="#get(bytes:Bytes):ImageSize-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Gets image size from binary data.</p>
+
+<pre><code>file <span class="o">=</span> <span class="t">File</span>.<span class="k">new</span> <span class="s">&quot;test.png&quot;</span>
+bytes <span class="o">=</span> <span class="t">Bytes</span>.<span class="k">new</span> file.size
+file.read bytes
+file.close
+size <span class="o">=</span> <span class="t">ImageSize</span>.get bytes
+pp size.width
+pp size.height</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/hkalexling/image_size.cr/blob/a698fec0ca59c671ceebcd549c4fc6054fc78d2d/src/image_size.cr#L23" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get(filename:String):ImageSize-class-method">
+      <div class="signature">
+        
+        def self.<strong>get</strong>(filename : String) : <a href="ImageSize.html">ImageSize</a>
+
+        <a class="method-permalink" href="#get(filename:String):ImageSize-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Gets image size from filename.</p>
+
+<pre><code>size <span class="o">=</span> <span class="t">ImageSize</span>.get <span class="s">&quot;test.png&quot;</span>
+pp size.width
+pp size.height</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/hkalexling/image_size.cr/blob/a698fec0ca59c671ceebcd549c4fc6054fc78d2d/src/image_size.cr#L37" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="resize(bytes:Bytes,*,width=0,height=0):Bytes-class-method">
+      <div class="signature">
+        
+        def self.<strong>resize</strong>(bytes : Bytes, *, width = <span class="n">0</span>, height = <span class="n">0</span>) : Bytes
+
+        <a class="method-permalink" href="#resize(bytes:Bytes,*,width=0,height=0):Bytes-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Resizes an image from binary data.</p>
+
+<p><span class="flag purple">NOTE</span>  At least one of the named arguments must be provided.</p>
+
+<p>When only <code><a href="ImageSize.html#width:Int32-instance-method">#width</a></code> is set, the <code><a href="ImageSize.html#height:Int32-instance-method">#height</a></code> will be automatically calculated to
+  keep the aspect ratio.</p>
+
+<pre><code>bytes <span class="o">=</span> <span class="t">ImageSize</span>.resize data, width: <span class="n">1024</span>
+<span class="t">File</span>.write <span class="s">&quot;1024.png&quot;</span>, bytes</code></pre>
+
+<p>When only <code><a href="ImageSize.html#height:Int32-instance-method">#height</a></code> is set, the <code><a href="ImageSize.html#width:Int32-instance-method">#width</a></code> will be automatically calculated to
+  keep the aspect ratio.</p>
+
+<pre><code>bytes <span class="o">=</span> <span class="t">ImageSize</span>.resize data, height: <span class="n">256</span>
+<span class="t">File</span>.write <span class="s">&quot;256.png&quot;</span>, bytes</code></pre>
+
+<p>Seting both <code><a href="ImageSize.html#width:Int32-instance-method">#width</a></code> and <code><a href="ImageSize.html#height:Int32-instance-method">#height</a></code> will break the aspect ratio.</p>
+
+<pre><code>bytes <span class="o">=</span> <span class="t">ImageSize</span>.resize data, width: <span class="n">1024</span>, height: <span class="n">1024</span>
+<span class="t">File</span>.write <span class="s">&quot;1024-1024.png&quot;</span>, bytes</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/hkalexling/image_size.cr/blob/a698fec0ca59c671ceebcd549c4fc6054fc78d2d/src/image_size.cr#L121" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resize(filename:String,*,width=0,height=0):Bytes-class-method">
+      <div class="signature">
+        
+        def self.<strong>resize</strong>(filename : String, *, width = <span class="n">0</span>, height = <span class="n">0</span>) : Bytes
+
+        <a class="method-permalink" href="#resize(filename:String,*,width=0,height=0):Bytes-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Same as <code>self<a href="ImageSize.html#resize(bytes:Bytes,*,width=0,height=0):Bytes-class-method">.resize</a></code> but reads the image from a filename.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/hkalexling/image_size.cr/blob/a698fec0ca59c671ceebcd549c4fc6054fc78d2d/src/image_size.cr#L140" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="height:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>height</strong> : Int32
+
+        <a class="method-permalink" href="#height:Int32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/hkalexling/image_size.cr/blob/a698fec0ca59c671ceebcd549c4fc6054fc78d2d/src/image_size.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="width:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>width</strong> : Int32
+
+        <a class="method-permalink" href="#width:Int32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/hkalexling/image_size.cr/blob/a698fec0ca59c671ceebcd549c4fc6054fc78d2d/src/image_size.cr#L4" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
