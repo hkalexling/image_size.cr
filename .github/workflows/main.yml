@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install system dependencies
-      run: apk add --no-cache libjpeg-turbo-dev libpng-dev tiff-dev
+      run: apk add --no-cache libjpeg-turbo-dev libpng-dev tiff-dev rsync
     - name: Build shards libraries
       run: make
     - name: Test
