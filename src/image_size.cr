@@ -3,12 +3,24 @@ require "./lib"
 struct ImageSize
   getter width = 0
   getter height = 0
+
+  # :nodoc:
   getter components = 0
 
   private def initialize(@width, @height, @components = 0)
   end
 
-  def self.get(bytes : Bytes)
+  # Gets image size from binary data.
+  # ```
+  # file = File.new "test.png"
+  # bytes = Bytes.new file.size
+  # file.read bytes
+  # file.close
+  # size = ImageSize.get bytes
+  # pp size.width
+  # pp size.height
+  # ```
+  def self.get(bytes : Bytes) : ImageSize
     if self.is_webp bytes
       self.get_webp bytes
     else
@@ -16,7 +28,13 @@ struct ImageSize
     end
   end
 
-  def self.get(filename : String)
+  # Gets image size from filename.
+  # ```
+  # size = ImageSize.get "test.png"
+  # pp size.width
+  # pp size.height
+  # ```
+  def self.get(filename : String) : ImageSize
     file = File.new filename
     bytes = Bytes.new file.size
     file.read bytes
@@ -77,6 +95,29 @@ struct ImageSize
     Bytes.new output, size
   end
 
+  # Resizes an image from binary data.
+  #
+  # NOTE: At least one of the named arguments must be provided.
+  #
+  # When only `width` is set, the `height` will be automatically calculated to
+  #   keep the aspect ratio.
+  # ```
+  # bytes = ImageSize.resize data, width: 1024
+  # File.write "1024.png", bytes
+  # ```
+  #
+  # When only `height` is set, the `width` will be automatically calculated to
+  #   keep the aspect ratio.
+  # ```
+  # bytes = ImageSize.resize data, height: 256
+  # File.write "256.png", bytes
+  # ```
+  #
+  # Seting both `width` and `height` will break the aspect ratio.
+  # ```
+  # bytes = ImageSize.resize data, width: 1024, height: 1024
+  # File.write "1024-1024.png", bytes
+  # ```
   def self.resize(bytes : Bytes, *, width = 0, height = 0) : Bytes
     size = self.get bytes
     if width == 0 && height == 0
@@ -95,6 +136,7 @@ struct ImageSize
     end
   end
 
+  # Same as `self.resize` but reads the image from a filename.
   def self.resize(filename : String, *, width = 0, height = 0) : Bytes
     file = File.new filename
     bytes = Bytes.new file.size
